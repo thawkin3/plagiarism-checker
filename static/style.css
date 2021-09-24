@@ -18,6 +18,10 @@ body {
   text-align: center;
 }
 
+a {
+  color: #007bff;
+}
+
 button {
   padding: 0.5rem 0.75rem;
   font-size: 1rem;
