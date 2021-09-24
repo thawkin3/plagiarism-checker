@@ -1,0 +1,52 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Plagiarism Checker</title>
+  <meta name="description" content="A machine learning app built with Python, Flask, and the Pinecone SDK.">
+  <meta name="author" content="Tyler Hawkins">
+
+  <meta property="og:title" content="Plagiarism Checker">
+  <meta property="og:type" content="website">
+  <meta property="og:description" content="A machine learning app built with Python, Flask, and the Pinecone SDK.">
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+  <h1>Plagiarism Checker</h1>
+  <p>This machine learning app is built using <a href="https://www.python.org/doc/">Python</a>, <a href="https://flask.palletsprojects.com/en/2.0.x/">Flask</a>, and the <a href="https://www.pinecone.io/">Pinecone SDK</a>.</p>
+  <p>Paste the text of an article into the textarea below.</p>
+  <p>Then, click the Submit button to find if your content has been plagiarized!</p>
+
+  <form id="plagiarismCheckerForm">
+    <label id="articleContentLabel" for="originalContent">Original Content</label>
+    <textarea id="articleContentInput" name="originalContent"></textarea>
+    <div><button type="submit" id="submitButton">Submit</button></div>
+  </form>
+
+  <div id="resultsContainer" style="display: none;">
+    <h2>Similar Articles</h2>
+    <div id="similaritySensitivityContainer">
+      <label for="sensitivity">Similarity Sensitivity: <span id="sensitivityPercentage">98</span>%</label>
+      <input type="range" id="sensitivity" name="sensitivity" min="0" max="100" value="98">
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th scope="col" class="titleColumn">Title</th>
+          <th scope="col" class="publicationColumn">Publication</th>
+          <th scope="col" class="scoreColumn">Match Score</th>
+        </tr>
+      </thead>
+      <tbody id="resultsTableBody"></tbody>
+    </table>
+    <div id="noResults">No results</div>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

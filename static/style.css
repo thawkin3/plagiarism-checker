@@ -1,0 +1,135 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 16px;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+body {
+  font-size: 100%;
+  padding: 1rem 2rem 2rem 2rem;
+  text-align: center;
+}
+
+button {
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  border-radius: 0.5rem;
+  border: none;
+  background: #007bff;
+  color: #fff;
+  cursor: pointer;
+  position: relative;
+  max-width: 18rem;
+  word-break: break-word;
+  word-wrap: break-word;
+  transition: all 0.5s;
+}
+
+button:focus,
+button:hover {
+  outline: none;
+}
+
+button:focus::before,
+button:hover::before {
+  box-shadow: #007bff 0 0 0 0.0625rem;
+  content: "";
+  height: calc(100% + 0.25rem);
+  left: 0;
+  margin-left: -0.25rem;
+  margin-top: -0.25rem;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  width: calc(100% + 0.25rem);
+  border-radius: inherit;
+  padding: 0.125rem;
+}
+
+#submitButton {
+  margin-top: 1rem;
+}
+
+#plagiarismCheckerForm {
+  margin-top: 2rem;
+}
+
+#articleContentLabel {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+#articleContentInput {
+  display: block;
+  margin: auto;
+  width: 50%;
+  height: 16rem;
+  font-size: 1rem;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+#similaritySensitivityContainer {
+  margin-bottom: 1rem;
+}
+
+table {
+  border-collapse: collapse;
+  width: 60rem;
+  max-width: 100%;
+  margin: auto;
+  text-align: left;
+}
+
+table td, table th {
+  border: 0.0625rem solid #ddd;
+  padding: 0.5rem;
+}
+
+table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+table th {
+  padding: 0.75rem 0.5rem;
+  background-color: #007bff;
+  color: #fff;
+}
+
+table .titleColumn {
+  width: 70%;
+}
+
+table .publicationColumn {
+  width: 15%;
+}
+
+table .scoreColumn {
+  width: 15%;
+}
+
+.hidden {
+  display: none;
+}
+
+#noResults {
+  margin: 1rem 1rem 2rem 1rem;
+}
+
+@media screen and (max-width: 1024px) {
+  body {
+    padding: 0 1rem 2rem 1rem;
+  }
+
+  table {
+    width: 100%;
+  }
+}
