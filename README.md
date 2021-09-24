@@ -4,6 +4,8 @@ This app is built using Python 3.9+, Flask 2.0+, and Pinecone. It performs a sim
 
 Applying this to a real-world scenario, a professor might use a service like this to compare a student's essay with a database of other academic papers. Or as a writer, you might want to check if your content has been stolen and posted elsewhere under someone else's name.
 
+![Demo](./plagiarism-checker-demo.gif)
+
 ## Running the app locally
 
 Begin by cloning this git repo and navigating to the project directory.
