@@ -17,8 +17,7 @@ app = Flask(__name__)
 
 PINECONE_INDEX_NAME = "plagiarism-checker"
 DATA_FILE = "articles.csv"
-# NROWS = 20000
-NROWS = 200
+NROWS = 20000
 
 def initialize_pinecone():
     load_dotenv()
@@ -46,10 +45,8 @@ def prepare_data(data):
     data.drop(columns=['date'], inplace = True)
 
     # combine the article title and content into a single field
-    # extract only first few sentences of each article for quicker vector calculations
     data['content'] = data['content'].fillna('')
     data['content'] = data.content.swifter.apply(lambda x: ' '.join(re.split(r'(?<=[.:;])\s', x)))
-    # data['content'] = data.content.swifter.apply(lambda x: ' '.join(re.split(r'(?<=[.:;])\s', x)[:4]))
     data['title_and_content'] = data['title'] + ' ' + data['content']
 
     # create a vector embedding based on title and article content
